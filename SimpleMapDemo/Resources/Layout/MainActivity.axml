@@ -2,21 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	 android:background="@drawable/main"
+    android:layout_height="wrap_content"
+	 android:background="@drawable/background1"
 	>
-		<TextView
-		android:text="بازیافت"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView1" 
-		android:gravity="center_vertical"
-        android:layout_marginRight="120dp"
-        android:layout_marginLeft="100dp"
-        android:textSize="50dp"
-        android:layout_marginTop="95dp"
-        android:textColor="#ff000000"
-	/>
+
 
 
 	<EditText
@@ -24,9 +13,9 @@
         android:layout_centerInParent="true"
         android:gravity="center_vertical"
         android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:paddingLeft="45dp"
-        android:paddingRight="45dp"
+        android:layout_marginLeft="65dp"
+		android:layout_marginTop="250dp"
+		android:ellipsize="middle"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:hint="شماره خود را وارد کنید"

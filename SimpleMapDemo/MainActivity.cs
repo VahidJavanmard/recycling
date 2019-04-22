@@ -50,7 +50,7 @@ namespace SimpleMapDemo
         //                                                                  };
 
         bool isGooglePlayServicesInstalled;
-        SamplesListAdapter listAdapter;
+        //SamplesListAdapter listAdapter;
         ListView listView;
 
         protected override void OnCreate(Bundle savedInstanceState)

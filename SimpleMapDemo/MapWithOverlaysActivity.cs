@@ -7,6 +7,7 @@ using Android.Support.V7.App;
 //using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
+using Android.Views;
 
 namespace SimpleMapDemo
 {
@@ -59,52 +60,56 @@ namespace SimpleMapDemo
             mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
 
-            //MyListView = FindViewById<ListView>(Resource.Id.MyListView);
-            //List = new List<string>()
-            //{
+            MyListView = FindViewById<ListView>(Resource.Id.MyListView);
+            List = new List<string>()
+            {
 
-            //    "اطلاعات کاربری",
-            //    "تاریخچه",
-            //    "آدرس های منتخب",
-            //    "پیام ها",
-            //    "پشتیبانی",
-            //    "تنظیمات",
-            //    "درباره ما",
-            //    "خروج",
+                "اطلاعات کاربری",
+                "تاریخچه",
+                "آدرس های منتخب",
+                "پیام ها",
+                "پشتیبانی",
+                "تنظیمات",
+                "درباره ما",
+                "خروج",
 
 
-            //};
-            //MyListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, List);
-            ////MyListView.ItemClick += MyListView_ItemClick;
-            //MyDrawer = FindViewById<DrawerLayout>(Resource.Id.MyDrawer);
-            //MyListView.Tag = 0;
-            //manageDrawer = new ManageDrawer(this, MyDrawer, Resource.String.openDrawer, Resource.String.closeDrawe);
+            };
+            MyListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, List);
+            //MyListView.ItemClick += MyListView_ItemClick;
+            MyDrawer = FindViewById<DrawerLayout>(Resource.Id.MyDrawer);
+            MyListView.Tag = 0;
+            manageDrawer = new ManageDrawer(this, MyDrawer, Resource.String.openDrawer, Resource.String.closeDrawe);
 
             //Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.MyToolBar);
-            //SetSupportActionBar(toolbar); 
+            //SetSupportActionBar(toolbar);
 
-            //MyDrawer.SetDrawerListener(manageDrawer);
-            //SupportActionBar.SetHomeButtonEnabled(true);
-            //SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            //SupportActionBar.SetDisplayShowTitleEnabled(true);
-            //manageDrawer.SyncState();
+            MyDrawer.SetDrawerListener(manageDrawer);
+            SupportActionBar.SetHomeButtonEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetDisplayShowTitleEnabled(true);
+            manageDrawer.SyncState();
 
 
         }
 
-        //public override bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    switch (item.ItemId)
-        //    {
-        //        case Android.Resource.Id.Home:
-        //            {
-        //                MyDrawer.CloseDrawer(MyListView);
-        //                manageDrawer.OnOptionsItemSelected(item);
-        //                break;
-        //            }
-        //    }
-        //    return base.OnOptionsItemSelected(item);
-        //}
+
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    {
+
+
+                        MyDrawer.CloseDrawer(MyListView);
+                        manageDrawer.OnOptionsItemSelected(item);
+                        break;
+                    }
+            }
+            return base.OnOptionsItemSelected(item);
+        }
 
         protected override void OnPause()
         {
